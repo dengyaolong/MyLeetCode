@@ -1,7 +1,3 @@
-/**
- * @param {string[]} tokens
- * @return {number}
- */
 var evalRPN = function(tokens) {
   var stack = [];
   for (var i = 0; i < tokens.length; ++i) {

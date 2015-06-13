@@ -1,11 +1,3 @@
-/**
-
- * @param {string} s
-
- * @return {number}
-
-*/
-
 var lengthOfLongestSubstring = function(s) {
     var res=0, tmp=0,cur=0, head=0,tail=0;
     var hash=[]
