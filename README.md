@@ -1,3 +1,5 @@
-#LeetCode题解
+# LeetCode 题解
 
-[leetcode](https://leetcode.com)是一个oj，题目不多，规划刷完
+用JS做[leetcode](https://leetcode.com)，尽量one day on AC.
+
+
