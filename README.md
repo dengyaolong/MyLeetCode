@@ -3,9 +3,16 @@
 用JS做[leetcode](https://leetcode.com)，尽量one day on AC.
 
 # 模拟 
-# 简单
+## 简单
 * 476
 * 415
+* 27
+
+
+# 字符串
+## 简单
+* 525 
+
 
 # array
 ## 简单
