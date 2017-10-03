@@ -2,11 +2,19 @@
 
 用JS做[leetcode](https://leetcode.com)，尽量one day on AC.
 
+# 模拟 
+# 简单
+* 476
+* 415
 
 # array
 ## 简单
 
 * 658
+
+## 中等
+
+* 667
 
 # dp
 ## 简单
