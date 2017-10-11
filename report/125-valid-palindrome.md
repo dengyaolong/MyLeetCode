@@ -4,4 +4,4 @@
 # 解法
 可以先过滤掉不符合要求的，再转为小写。就是典型回文串了。
 
-可以直接上正则replace(/[^0-9a-ZA-Z]*/g,"").toLowerCase()
+可以直接上正则`replace(/[^0-9a-ZA-Z]*/g,"").toLowerCase()`
