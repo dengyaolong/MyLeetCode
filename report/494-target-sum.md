@@ -21,4 +21,42 @@
 
 当然是AC了.
 
+# 其实这是一道dp
 
+我们换个思路，首先全部取符号-，
+
+为了使 -sum(arr) = S 
+
+我们需要调整若干个-转化为+号，使得 -sum(arr) + 2 * sum(subArr)  = S 
+
+即： 2 * sum(subArr) = S + sum(arr)
+
+也就是找出subArr得到 (S+sum(arr)) / 2
+
+整个状态方程就是：
+
+```
+dp[i][j] = dp[i - 1][j] + dp[i - 1][j - nums[i]]
+dp[0][0] = 1
+```
+
+i指的是前i个数，j指的是组合和，可以理解为：
+
+```
+每一个dp[i][j] = 不选择nums[i]凑出j + 选择nums[i]凑出j
+               = dp[i - 1][j] + dp[i - 1][j - nums[i]]
+
+初始状态则是，0个数凑成0，所以是1
+```
+
+## 进一步优化
+如果j从后往前遍历，那其实i是可以省略的。
+
+```
+dp[0] = 1
+dp[1...S] = 0
+
+i: 0 -> nums.length
+    j: V -> nums[i]
+        dp[j] += dp[j - nums[i]]
+```
