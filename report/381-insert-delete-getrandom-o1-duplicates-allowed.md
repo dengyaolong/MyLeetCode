@@ -9,3 +9,5 @@
 * hashMap用的是num => inds
 * 交换后，需要拿到原来的数组末元素的inds, 并覆盖inds[end]
 
+另外，这次提交的 answer竟然击败了100%的js提交....
+
