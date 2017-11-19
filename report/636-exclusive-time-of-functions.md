@@ -12,7 +12,7 @@
 # 解法
 这绝对是一题超级无聊而且繁杂的模拟题....做了一个小时....
 
-大概思路是这样的，当前日志记做cur，上一个日志叫做pre
+大概思路是这样的，当前日志记做cur，上一个日志叫做pre，我们用一个栈来记录start的log，当遇到end时候进行一次pop.
 
 * 当cur.status === start, pre.status === start，则res[pre.id] += cur.ts - pre.ts
 * 当cur.status === end, pre.status === start, 则是闭合情况，res[cur.id] += cur.ts - pre.ts + 1
