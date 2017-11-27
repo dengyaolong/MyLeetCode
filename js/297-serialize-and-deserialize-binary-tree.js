@@ -18,10 +18,10 @@ var deserialize = function(data) {
   if(!data) return null
   data = JSON.parse(data)
   let iters = Object.keys(data)
-  iters.sort((l,r) => l - r)
+  iters.sort((l,r) => l.length - r.length || l[0] - r[0])
   let root = new TreeNode(iters[0])
   let mp = {}
-  mp["1"] = root
+  mp[1] = root
   for(let i = 1; i < iters.length; i++) {
     let iter = iters[i]
     let cur = new TreeNode(data[iter])
