@@ -1,39 +1,38 @@
 var calculate = function(s) {
-  s = s.replace(' ', '')
-  let opr = []
+  s = s.replace(/\s/g, '')
   let nums = []
   let start = 0
-  let cal = []
+  s += '+'
   for(let i = 0; i < s.length; i++) {
     if(['-', '+'].indexOf(s[i]) != -1) {
       let cur = parseInt(s.slice(start, i))
-      start = i + 1
+      start = i
       nums.push(cur)
     } else if(['*', '/'].indexOf(s[i]) != -1) {
       let cur = parseInt(s.slice(start, i))
-      let nextNum = i + 1
-      let last
+      let head = i;
+      let tail = i;
+      let last = s[i]
       do {
-        while(s[nextNum] >= '0' && s[nextNum] <= '9') {
-          nextNum ++
+        head = tail = tail + 1
+        while(s[tail] >= '0' && s[tail] <= '9') {
+          tail ++
         }
-        let next = parseInt(s.slice(i + 1, nextNum))
-        console.log(next, cur)
-        if(s[nextNum] === '*') {
+        let next = parseInt(s.slice(head, tail))
+        if(s[head - 1] === '*') {
           cur *= next
         } else {
-          cur = Math.floor(cur / next)
+          cur /= next
+          cur = cur > 0 ? Math.floor(cur) : Math.ceil(cur)
         }
-      } while(['*', '/'].indexOf(s[nextNum]) != -1)
+      } while(['*', '/'].indexOf(s[tail]) != -1)
 
-      start = nextNum + 1
-      i = nextNum
+      start = i = tail
       nums.push(cur)
     } else {
 
     }
   }
-  console.log(nums)
+  return nums.reduce((pre, cur) => pre + cur, 0)
 };
 
-console.log(calculate("3+2*2 "))
